@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+ul li {
+  float: left;
+  
+}
+
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.toptext {
+    background-color: #111111;
+}
+
+.senter_hoved_box {
+    width: 90%;
+    max-width: 500px;
+    background: #111111;
+    color: #ffffff;
+    margin: 100px auto 0;
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+}
+
+
+.sokebox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sokebox input {
+    padding: 10px 20px;
+    height: 70px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+
+}
+
+.sokebox button {
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+}
+
+.sokebox button img {
+    width: 95%;
+    height: 95%;
+}
+
+.vaerikon {
+    width: 170px;
+}
+
+.temp {
+    font-size: 80px;
+    font-weight: 500;
+}
+
+.by {
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+.vaer-detaljer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+    margin-top: 50px;
+}
+
+.vindbox {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex: 1;
+    text-align: left;
+}
+
+.vindbox img {
+    width: 40px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.vind-hastighet, .vind-retning {
+    font-size: 28px;
+    margin-top: -10px;
+}

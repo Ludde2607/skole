@@ -1,0 +1,13 @@
+88a7d484e8b32ee4f96763cd1318a1b6
+
+https://api.openweathermap.org/data/2.5/weather?q=oslo&appid=88a7d484e8b32ee4f96763cd1318a1b6
+
+
+Bilder:
+https://pixabay.com/vectors/the-sun-summer-sun-beach-hot-349394/
+https://pixabay.com/vectors/cloud-rain-weather-157528/
+https://pixabay.com/vectors/cloud-weather-pictogram-1970485/
+https://pixabay.com/illustrations/clouds-stars-rain-cloud-cartoon-7689100/
+https://pixabay.com/vectors/clouds-rain-weather-storm-water-31038/
+https://pixabay.com/vectors/cloud-weather-climate-rain-cumulus-158297/
+
