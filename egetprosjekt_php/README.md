@@ -1,3 +1,6 @@
+Gammel siste er nå egetprosjekt under "Master" om jeg forstår dette riktig
+
+
 Ting jeg skal prøve å gjøre innen 30 dager
 
 Gjøre nettsiden "penere" og fikse bra mappe struktur
