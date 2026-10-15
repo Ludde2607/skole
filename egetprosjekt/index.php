@@ -19,7 +19,7 @@
                 <input type="text" name="by_navn" placeholder="bynavn">
                 <input type="text" name="vær" placeholder="vær">
                 <input type="int" name="temp" placeholder="tempratur">
-                <p>ok ok ok ok ok ok ok</p>
+                <p>ok ok ok ok ok ok ok ok</p>
                 
                 <button>TEST</button>
             </form>
