@@ -15,14 +15,7 @@
     </header>
     <main>
         <div>
-            <form action="includes/datahandling.inc.php" method="post">
-                <input type="text" name="by_navn" placeholder="bynavn">
-                <input type="text" name="vær" placeholder="vær">
-                <input type="int" name="temp" placeholder="tempratur">
-                
-                
-                <button>TEST</button>
-            </form>
+            
         </div>
     </main>
 </body>

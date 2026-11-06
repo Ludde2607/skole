@@ -32,21 +32,47 @@
                 <div class="vaer-detaljer">
                     <div class="vindbox">
                         <img src="bilder/vind.png">
-                        <h4 class="vind-hastighet">10 m/s</h4>
+                        <h4 class="vind-hastighet">0 m/s</h4>
                     </div>
                     <div class="vindbox">
                         <img src="bilder/nord.png" class="vindikon">
-                        <h4 class="vind-retning">10°N</h4>
+                        <h4 class="vind-retning">0°N</h4>
                     </div>
                 </div>
             </div>
 
         </div>
-        <div>
+        <div class="tidligere_sok">
             <h3>Tidligere søk:</h3>
-            <p>By navn</p>
-            <p>Temp</p>
-            <p>Værret</p>
+            <table>
+            <thead>
+                <tr>
+                    <th>By navn</th>
+                    <th>Temp</th>
+                    <th>Været</th>
+                    <th>Tidspunkt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    require_once "includes/dbh.inc.php";
+
+                    $sql = "SELECT * FROM datavær ORDER BY id DESC LIMIT 5";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute();
+                    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                    foreach ($result as $row) {
+                        echo "<tr>";
+                        echo "<td>" . htmlspecialchars($row['by_navn']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['temp']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['vær']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['tid']) . "</td>";
+                        echo "</tr>";
+                    }
+                ?>
+            </tbody>
+            </table>
         </div>
     </main>
 
@@ -98,7 +124,7 @@
         
         vindIkon.style.transform = 'rotate(' + data.wind.deg + 'deg)';
 
-        
+        await saveData(data);
 
 
     }
@@ -106,8 +132,8 @@
     async function saveData(data) {
         const vaerData = {
             by_navn: data.name,
-            vær: data.weather[0],
-            temp: data.main.temp.main
+            vær: data.weather[0].main,
+            temp: data.main.temp
             
         };
         
@@ -136,7 +162,7 @@
         checkWeather(sokeBox.value)
     })
 
-    checkWeather();
+    checkWeather(Oslo);
 </script>
 
 
