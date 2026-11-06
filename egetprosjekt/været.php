@@ -57,7 +57,7 @@
                 <?php
                     require_once "includes/dbh.inc.php";
 
-                    $sql = "SELECT * FROM datavær ORDER BY id DESC LIMIT 5";
+                    $sql = "SELECT * FROM datavær ORDER BY id DESC LIMIT 100000";
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute();
                     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -84,6 +84,8 @@
     const sokeKnapp = document.querySelector(".sokebox button")
     const vaerIkon = document.querySelector(".vaerikon")
     const vindIkon = document.querySelector(".vindikon")
+
+    const test = id
 
     async function checkWeather(by) {
         const response = await fetch(apiUrl + by + '&appid=' + apiKey);
@@ -162,7 +164,7 @@
         checkWeather(sokeBox.value)
     })
 
-    checkWeather(Oslo);
+    checkWeather("Oslo");
 </script>
 
 
