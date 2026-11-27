@@ -10,7 +10,7 @@
     <header>
         <ul>
         <li><a href="index.php">Home</a></li>
-        <li><a href="været.php">Været</a></li>
+        <li><a href="været.php?order=tid">Været</a></li>
     </ul>
     </header>
     <main>

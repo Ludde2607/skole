@@ -11,7 +11,7 @@
     <header>
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="været.php">Været</a></li>
+            <li><a href="været.php?order=tid">Været</a></li>
         </ul>
     </header>
     <main>
@@ -47,17 +47,28 @@
             <table>
             <thead>
                 <tr>
-                    <th>By navn</th>
-                    <th>Temp</th>
-                    <th>Været</th>
-                    <th>Tidspunkt</th>
+                    <th><a href="?order=by_navn">By navn</a></th>
+                    <th><a href="?order=temp">Temp</a></th>
+                    <th><a href="?order=vær">Været</a></th>
+                    <th><a href="?order=tid">Tidspunkt</a></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="tidligere_sok_tabell">
                 <?php
                     require_once "includes/dbh.inc.php";
 
-                    $sql = "SELECT * FROM datavær ORDER BY id DESC LIMIT 10";
+                    $sql = "SELECT * FROM datavær";
+                    if ($_GET['order'] === 'by_navn') {
+                        $sql .= " ORDER BY by_navn DESC";
+                    } elseif ($_GET['order'] === 'temp') {
+                        $sql .= " ORDER BY temp DESC";
+                    } elseif ($_GET['order'] === 'vær') {
+                        $sql .= " ORDER BY vær DESC";
+                    } else {
+                        $sql .= " ORDER BY id DESC";
+                    }
+                    
+                    //ORDER BY id DESC LIMIT 10000";
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute();
                     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -160,11 +171,14 @@
         
     }
 
+
     sokeKnapp.addEventListener("click", ()=>{
         checkWeather(sokeBox.value)
     })
 
     checkWeather("Oslo");
+
+
 </script>
 
 

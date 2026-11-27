@@ -127,9 +127,14 @@ ul li a {
     font-size: 30px;
     margin : 0;
 }
+.tidligere_sok thead tr th a {
+    text-decoration: none;
+    color: #000000;
+}
 
 .tidligere_sok tbody tr td {
     padding: 10px;
     border: 1px solid #444444;
     
 }
+
