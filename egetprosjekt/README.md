@@ -13,4 +13,4 @@ SQL injections
 
 
 
-
+Jeg kjører dette med XAMPP og bruker det database systemet som det tilbyr. 
