@@ -39,6 +39,10 @@
                         <h4 class="vind-retning">0°N</h4>
                     </div>
                 </div>
+                <div class="mer_info">
+                    <p class="følse-som">Føles som: 22°C</p>
+                </div>
+                <h2 class="vis_mer" onclick="toggleDetails()">Vis mer informasjon</h2>
             </div>
 
         </div>
@@ -108,6 +112,7 @@
         document.querySelector(".temp").innerHTML = data.main.temp + "°C";
         document.querySelector(".vind-hastighet").innerHTML = data.wind.speed + "m/s";
         document.querySelector(".vind-retning").innerHTML = data.wind.deg + "°N";
+        document.querySelector(".følse-som").innerHTML = "Føles som: " + data.main.feels_like + "°C";
 
         if (data.weather[0].main == "Clear"){
             vaerIkon.src = "bilder/sol.png";
@@ -171,12 +176,31 @@
         
     }
 
+    async function toggleDetails(by) {
+        const merInfo = document.querySelector(".mer_info");
+        if (merInfo.style.display === "none" || merInfo.style.display === "") {
+            merInfo.style.display = "flex";
+            document.querySelector(".vis_mer").innerHTML = "Skjul mer informasjon";
+        } else {
+            merInfo.style.display = "none";
+            document.querySelector(".vis_mer").innerHTML = "Vis mer informasjon";
+        }
+
+
+
+
+
+    }
+        
+
 
     sokeKnapp.addEventListener("click", ()=>{
         checkWeather(sokeBox.value)
     })
 
     checkWeather("Oslo");
+
+
 
 
 </script>

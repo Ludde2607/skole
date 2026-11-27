@@ -114,6 +114,15 @@ ul li a {
     margin-top: -10px;
 }
 
+
+.mer_info {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 .tidligere_sok {
     margin-top: 50px;
     text-align: left;
